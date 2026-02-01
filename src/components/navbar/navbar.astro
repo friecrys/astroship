@@ -1,41 +1,12 @@
 ---
 import Container from "@/components/container.astro";
 import Link from "@/components/ui/link.astro";
-import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
-  },
-  {
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
-  },
+  { title: "How it Works (B4U)", path: "#faq" },
+  { title: "Community Chat", path: "https://t.me/+gkv-iS6GkeMyYTc5" },
+  { title: "Support", path: "https://t.me/foodaio1" },
 ];
 ---
 
@@ -43,56 +14,49 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
-          >
+        <a href="/" class="text-lg flex items-center gap-2 group">
+          <img 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2025-04-16%2019.43.12-URgp8DKepyVyZRsYrtrWQiXa5C9Kka.jpg" 
+            alt="FoodAIO Logo" 
+            class="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+          />
+          <span class="font-bold text-xl transition-colors duration-200"><span class="text-brand-gold group-hover:text-brand-gold-light">Food</span><span class="text-slate-800 group-hover:text-slate-600">AIO</span></span>
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-gray-800 transition-transform duration-300 hover:scale-110 active:scale-95" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
-
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                      <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                )}
-              </>
+            menuitems.map((item) => (
+              <li>
+                <a
+                  href={item.path}
+                  target={item.path.startsWith("http") ? "_blank" : undefined}
+                  rel={item.path.startsWith("http") ? "noopener" : undefined}
+                  class="group flex lg:px-3 py-2 items-center text-gray-600 hover:text-brand-gold transition-all duration-200 relative">
+                  <span class="relative">
+                    {item.title}
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </a>
+              </li>
             ))
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
+          <Link href="https://app.foodaio.foo" size="md" block target="_blank" rel="noopener">
+            Launch @foodaionewbot
+          </Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <Link href="https://app.foodaio.foo" size="md" target="_blank" rel="noopener">
+          Launch @foodaionewbot
+        </Link>
       </div>
     </div>
   </header>
