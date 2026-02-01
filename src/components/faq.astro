@@ -2,28 +2,23 @@
 const faqs = [
   {
     question: "What is B4U?",
-    answer: "B4U (Buy For You) is our specialized service where we place orders on your behalf using our proprietary discounts and rewards. This allows us to offer you a flat 50% discount on your total bill.",
-    borderColor: "border-t-4 border-t-brand-gold border-x border-b border-slate-200"
+    answer: "B4U (Buy For You) is our specialized service where we place orders on your behalf using our proprietary discounts and rewards. This allows us to offer you a flat 50% discount on your total bill."
   },
   {
     question: "Is it safe?",
-    answer: "Yes. We don't need your personal login for most orders. We use our own accounts to place the order for you, keeping your information secure.",
-    borderColor: "border-2 border-blue-400"
+    answer: "Yes. We don't need your personal login for most orders. We use our own accounts to place the order for you, keeping your information secure."
   },
   {
     question: "Which stores are supported?",
-    answer: "Our bot @FoodAIOnewBot provides real-time updates on available stores, menu browsing, and automatic pricing. We support a wide range of popular restaurants and food delivery services.",
-    borderColor: "border-2 border-orange-200"
+    answer: "Our bot @FoodAIOnewBot provides real-time updates on available stores, menu browsing, and automatic pricing. We support a wide range of popular restaurants and food delivery services."
   },
   {
     question: "How can you offer 50% off?",
-    answer: "We utilize specialized corporate accounts, reward systems, and bulk purchasing power to 'Buy For You' (B4U), passing those massive savings directly to our community.",
-    borderColor: "border-t-4 border-t-green-400 border-x border-b border-slate-200"
+    answer: "We utilize specialized corporate accounts, reward systems, and bulk purchasing power to 'Buy For You' (B4U), passing those massive savings directly to our community."
   },
   {
     question: "What if there's an issue?",
-    answer: "Our support lead @foodaio1 is available 24/7 to handle any store-side issues or delivery delays. You're never alone when ordering with FoodAIO.",
-    borderColor: "border-2 border-purple-300"
+    answer: "Our support lead @foodaio1 is available 24/7 to handle any store-side issues or delivery delays. You're never alone when ordering with FoodAIO."
   }
 ];
 ---
@@ -44,7 +39,7 @@ const faqs = [
     
     <div class="space-y-4">
       {faqs.map((faq) => (
-        <details class="group rounded-lg overflow-hidden bg-white transition-all duration-300 hover:shadow-lg" class:list={[faq.borderColor]}>
+        <details class="group rounded-lg overflow-hidden bg-white transition-all duration-300 hover:shadow-lg border-2 border-brand-gold">
           <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-lg select-none">
             <span>{faq.question}</span>
             <span class="ml-4 flex-shrink-0 text-brand-gold transition-transform duration-300 group-open:rotate-45">
