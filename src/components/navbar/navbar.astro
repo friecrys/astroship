@@ -14,13 +14,13 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg flex items-center gap-2">
+        <a href="/" class="text-lg flex items-center gap-2 group">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2025-04-16%2019.43.12-URgp8DKepyVyZRsYrtrWQiXa5C9Kka.jpg" 
             alt="FoodAIO Logo" 
-            class="w-8 h-8 rounded-full object-cover"
+            class="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
           />
-          <span class="font-bold text-xl"><span class="text-brand-gold">Food</span><span class="text-slate-800">AIO</span></span>
+          <span class="font-bold text-xl transition-colors duration-200"><span class="text-brand-gold group-hover:text-brand-gold-light">Food</span><span class="text-slate-800 group-hover:text-slate-600">AIO</span></span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -35,8 +35,11 @@ const menuitems = [
                   href={item.path}
                   target={item.path.startsWith("http") ? "_blank" : undefined}
                   rel={item.path.startsWith("http") ? "noopener" : undefined}
-                  class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-brand-gold transition-colors">
-                  <span>{item.title}</span>
+                  class="group flex lg:px-3 py-2 items-center text-gray-600 hover:text-brand-gold transition-all duration-200 relative">
+                  <span class="relative">
+                    {item.title}
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                  </span>
                 </a>
               </li>
             ))
